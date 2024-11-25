@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
     -- end }
 
     -- Colorschemes
-    use { "ellisonleao/gruvbox.nvim" }
+    use "ellisonleao/gruvbox.nvim"
 
     -- Cmp
     use "hrsh7th/cmp-nvim-lsp"
@@ -57,6 +57,7 @@ return require('packer').startup(function(use)
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
+    use "molecule-man/telescope-menufacture"
 
     -- Comment
     use "numToStr/Comment.nvim"
@@ -68,12 +69,25 @@ return require('packer').startup(function(use)
     -- Rust
     use "mrcjkb/rustaceanvim"
 
+    -- Jupyter
+    use "kiyoon/jupynium.nvim"
+
+    -- Debug
+    use "rcarriga/nvim-dap-ui"
+    use "mfussenegger/nvim-dap"
+    use "nvim-neotest/nvim-nio"
+    use "mfussenegger/nvim-dap-python"
+    use "theHamsta/nvim-dap-virtual-text"
+
     -- Harpoon
     use "ThePrimeagen/harpoon"
 
     -- Copilot
-    use "zbirenbaum/copilot.lua"
-    use "zbirenbaum/copilot-cmp"
+    -- use "zbirenbaum/copilot.lua"
+    -- use "zbirenbaum/copilot-cmp"
+
+    -- Marks
+    use "chentoast/marks.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

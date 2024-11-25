@@ -13,8 +13,8 @@ local opts = {
 }
 
 local mappings = {
-    f = { require("telescope.builtin").find_files, "Find files" },
-    F = { require("telescope.builtin").live_grep, "Find text" },
+    f = { require("telescope").extensions.menufacture.find_files, "Find files" },
+    F = { require("telescope").extensions.menufacture.live_grep, "Find text" },
     b = { require("telescope.builtin").buffers, "Find buffers" },
     l = {
         name = "LSP",
@@ -33,6 +33,22 @@ local mappings = {
         k = { function() require('harpoon.ui').nav_file(-1) end, "Prev File" },
 	},
     hl = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    d = {
+        name = "Debug",
+        d = { require("dapui").toggle, "Debug UI" },
+        c = { require("dap").continue, "Continue" },
+        h = { require("dap").step_back, "Step back" },
+        sj = { require("dap").step_into, "Step into" },
+        sk = { require("dap").step_out, "Step out" },
+        l = { require("dap").step_over, "Step over" },
+        e = { require("dapui").eval, "Eval" },
+        b = { require("dap").toggle_breakpoint, "Breakpoint" },
+        j = { require("dap").down, "Down" },
+        k = { require("dap").up, "Up" },
+        r = { require("dap").run_to_cursor, "Run to cursor" },
+        t = { require("dap").terminate, "Terminate" },
+        ["<leader>"] = { require("dap").run_last, "Run last" },
+    },
     ["/"] = { require("Comment.api").toggle.linewise.current, "Comment" },
 }
 
@@ -47,6 +63,10 @@ local vopts = {
 
 local vmappings = {
     ["/"] = { '<esc><cmd>lua require("Comment.api").toggle.linewise(vim.fn.visualmode())<cr>', "Comment" },
+    d = {
+        name = "Debug",
+        e = { require("dapui").eval, "Eval" },
+    },
 }
 
 wk.setup(setup)

@@ -13,6 +13,10 @@ local servers = {
     -- "omnisharp",
     -- "rust_analyzer", -- set up by rustaceanvim
     "jdtls",
+    "hls",
+    -- "solc",
+    "csharp_ls",
+    "gopls",
 }
 
 local settings = {
